@@ -1,0 +1,148 @@
+# Node.js GoPro library 
+
+Based on kschzt project (https://github.com/kschzt/gopro),adapted for MIPS architectures with the addition of new features. 
+
+## Installation
+
+--------------- TO DO ------------------
+
+-------	   Fare il pacchetto     -------
+
+----------------------------------------
+
+## How to use
+### Getting started
+
+Firt of all, import gopro library as follows
+
+		var Camera = require('gopro').Camera;
+
+Then initialize your camera object:
+		
+		var cam = new Camera('10.5.5.9', 'camera password');
+
+First parameter is the gopro camera IP, 10.5.5.9 is the default address. The second one is the password.
+
+Now you can start to use all the functions!
+
+#### **status()**
+It return the 'gopro status array'.
+For more info about take a look at https://gist.github.com/KonradIT/9554819
+
+#### **whenReady()**
+This function return the ready status byte, when the cam is ready to use.
+
+#### **powerOn()**
+It power on your cam (it works only if the wifi is turned on).
+
+#### **powerOff()**
+It power off your cam.
+
+#### **startBeeping()**
+When this function is called, the cam start beeping for localization.
+
+#### **stopBeeping()**
+It stop cam beeping.
+
+#### **startCapture()**
+This function has double use:  if it's used in video mode it starts a video recording; if it's used in photo mode it take a picture.
+
+#### **stopCapture()**
+If a powerOn function is called, it stops the recording.
+
+#### **deleteLast()**
+It delete the last video/photo file stored in your SD card.
+
+•	deleteAll()
+It delete alla the files on the SD card.
+
+•	erase()
+It call the deleteAll() function.
+
+•	ls(path)
+When called, it returns the list of files present on your SD. The 'path' parameter represent the directory address, for example 'http://10.5.5.9:8080/DCIM/999GOPRO/'.
+ 
+•	get(path)
+It returns the file passed as parameter.
+
+•	switch2Camera()
+It switches the camera mode to video recording.
+
+•	switch2Photo()
+It switches the camera to take a picture.
+
+•	switch2Burst()
+It switches the camera mode to burst functionality.
+
+•	switch2Timelapse()
+It switches the camera mode to time lapse.
+
+•	videoWVGA60()
+It sets video resolution to WVGA at 60 fps.
+
+•	videoWVGA120()
+Like the previous, but sets the fps rate to 120.
+
+•	video720p30() /	video720p60()
+Those functions sets video resolution to 720p, the first one sets the fps to 30 and the second one to 60.
+
+•	video960p30() / video960p60()
+Those functions sets video resolution to 960p, the first one sets the fps to 30 and the second one to 60.
+
+•	video1080p30()
+This functions sets video resolution to full HD (1080p) and the fps to 30.
+
+•	photo11w()
+This function sets photo resolution to 11 Megapixel in wide FOV (Field Of View).
+
+•	photo8m()
+This function sets photo resolution to 8 Megapixel in medium FOV.
+
+•	photo5w() /	photo5m()
+Those functions sets photo resolution to 5 Megapixel, the firts one sets the FOV to wide and the second one to medium.
+
+•	timer05()
+Sets the self-timer interval to 0.5 seconds.
+
+•	timer1()
+Sets the self-timer interval to 1 second.
+
+•	timer2()
+Sets the self-timer interval to 2 seconds.
+
+•	timer5()
+Sets the self-timer interval to 5 seconds.
+
+•	timer10()
+Sets the self-timer interval to 10 seconds.
+
+•	timer30()
+Sets the self-timer interval to 30 seconds.
+
+•	timer60()
+Sets the self-timer interval to 1 minute.
+
+•	beep0()
+This method sets the beep volume to 0.
+
+•	beep75()
+This method sets the beep volume to 75%.
+
+•	beep100()
+This method sets the beep volume to 100%.
+
+•	previewON()
+•	previewOFF()
+
+•	orientationHeadUP() / orientationHeadDOWN()
+Those functions sets the camera orientation.
+
+•	fovWide()
+Sets the FOV to Wide.
+
+•	fovMedium()
+Sets the FOV to Medium.
+
+•	fovNarrow()
+Sets the FOV to Narrow.
+
